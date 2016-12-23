@@ -1,0 +1,10 @@
+sudo: yes
+langage: android
+jdk:oraclejdk8
+
+android:
+  components:
+    plateform-tools
+    tools
+    build-tools-23.0.3
+    android-23
