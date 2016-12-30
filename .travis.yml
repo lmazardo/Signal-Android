@@ -1,23 +1,23 @@
-sudo: false
+language: android
 
-langage: android
-jdk: oraclejdk8
+jdk:
+- oraclejdk8
 
 android:
   components:
-  - platform-tools
   - tools
-  - build-tools-23.0.3
-  - android-23
+  - platform-tools
+  - android-25
+  - build-tools-25.0.2
 
-#before_install:
-#- chmod +x gradlew
-#
-#script:
-#- "./gradlew clean build connectedAndroidTest -PdisablePreDex --stacktrace"
-#
-#notifications:
-#  email: true
+before_install:
+- chmod +x gradlew
+
+script:
+- "./gradlew clean build connectedAndroidTest -PdisablePreDex --stacktrace"
+
+notifications:
+  email: true
 
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
